@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" path="res://GameBoard/Cursor/Cursor.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dsmh2fn7kpkri" path="res://GameBoard/Cursor/menu_selection_arrow.png" id="2"]
-[ext_resource type="Resource" path="res://GameBoard/Grid.tres" id="3"]
+[ext_resource type="Resource" uid="uid://bf3rs4ajxkb1x" path="res://GameBoard/Grid.tres" id="3"]
 
 [node name="Cursor" type="Node2D"]
 script = ExtResource("1")
 grid = ExtResource("3")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0.193848, 0)
 rotation = 2.35619
 texture = ExtResource("2")

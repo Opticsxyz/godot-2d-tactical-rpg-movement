@@ -1,7 +1,87 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4mhjq651egt"]
+[gd_scene load_steps=16 format=3 uid="uid://d4mhjq651egt"]
 
 [ext_resource type="Script" path="res://Units/Unit.gd" id="1"]
 [ext_resource type="Resource" uid="uid://bf3rs4ajxkb1x" path="res://GameBoard/Grid.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://bihlso1g1e6pn" path="res://8bithorror-fishing4-Sheet.png" id="3_7edkk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du2my"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(0, 0, 8, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1esnq"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(8, 0, 8, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu6mn"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(48, 0, 8, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otwj0"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(56, 0, 8, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5t4j"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(32, 0, 8, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3kns"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(40, 0, 8, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh1eh"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(16, 0, 8, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ywi1"]
+atlas = ExtResource("3_7edkk")
+region = Rect2(24, 0, 8, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kpw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du2my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1esnq")
+}],
+"loop": true,
+"name": &"down_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu6mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otwj0")
+}],
+"loop": true,
+"name": &"left_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5t4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3kns")
+}],
+"loop": true,
+"name": &"right_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh1eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ywi1")
+}],
+"loop": true,
+"name": &"up_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="1"]
 length = 0.001
@@ -42,12 +122,18 @@ _data = {
 [node name="Unit" type="Path2D"]
 script = ExtResource("1")
 grid = ExtResource("2")
+move_speed = 200.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotates = false
 loop = false
 
 [node name="Sprite" type="Sprite2D" parent="PathFollow2D"]
+position = Vector2(0, -4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
+sprite_frames = SubResource("SpriteFrames_0kpw0")
+animation = &"right_animation"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
