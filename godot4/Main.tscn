@@ -36,12 +36,14 @@ grid = ExtResource("4")
 [node name="Cursor" parent="GameBoard" instance=ExtResource("1")]
 
 [node name="Bear" parent="GameBoard" instance=ExtResource("2")]
-position = Vector2(176, 208)
+texture_filter = 1
+position = Vector2(104, 125)
 curve = SubResource("1")
 move_range = 3
 skin = ExtResource("8_4ye3p")
 
 [node name="Cat" parent="GameBoard" instance=ExtResource("2")]
+visible = false
 position = Vector2(850.293, 412.465)
 curve = SubResource("2")
 move_range = 8
@@ -49,6 +51,7 @@ skin = ExtResource("9")
 skin_offset = Vector2(5, 12)
 
 [node name="Squirrel" parent="GameBoard" instance=ExtResource("2")]
+visible = false
 position = Vector2(355.298, 298.556)
 curve = SubResource("3")
 move_range = 5
