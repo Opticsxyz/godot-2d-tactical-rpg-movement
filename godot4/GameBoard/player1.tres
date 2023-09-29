@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dwf54nvryiy3e"]
+
+[ext_resource type="Texture2D" uid="uid://bihlso1g1e6pn" path="res://8bithorror-fishing4-Sheet.png" id="1_m6o6f"]
+
+[resource]
+atlas = ExtResource("1_m6o6f")
+region = Rect2(0, 0, 8, 24)
